@@ -7,8 +7,19 @@ public class Taller5 {
     private static final Scanner scanner = new Scanner(System.in);//Llamado objeto para todos los metodos
     private static final Random generadorAleatorio = new Random();//Llamado objeto para todos los metodos
 
-    public static void FacturacionMercado() {
-    }//Cierre metodo FacturacionMercado
+    public static void FacturacionMercado(double totalCompra, int cantidadProductos, boolean tieneMembresia) {
+        // Constantes para los descuentos
+        double descuentoMenbresia = 0.10; // 10%
+        double descuentoCantidad = 0.05;   // 5%
+        if (tieneMembresia) {
+            totalCompra -= totalCompra * descuentoMenbresia;
+        }
+        if (cantidadProductos > 10) {
+            totalCompra -= totalCompra * descuentoCantidad;
+        }
+        System.out.println("-----------------------------------------");
+        System.out.println("El total final a pagar es: $" + totalCompra);
+    }
 
     public static void ClasificacionMascotas(String animal) {
         int indiceEspecialista;
