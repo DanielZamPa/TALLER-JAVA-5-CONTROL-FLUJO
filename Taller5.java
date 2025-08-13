@@ -2,8 +2,8 @@ package Clase3;
 import java.util.Scanner;
 import java.util.Random;
 public class Taller5 {
-    private static final Scanner scanner = new Scanner(System.in);
-    private static final Random generadorAleatorio = new Random();
+    private static final Scanner scanner = new Scanner(System.in);//Llamado objeto para todos los metodos
+    private static final Random generadorAleatorio = new Random();//Llamado objeto para todos los metodos
 
     public static void FacturacionMercado(){}//Cierre metodo FacturacionMercado
 
@@ -45,7 +45,41 @@ public class Taller5 {
     }//Cierre metodo ClasificacionMascotas
 
 
-    public static void AccesoParqueadero(){}//Cierre metodo AccesoParqueadero
+    public static void AccesoParqueadero(String tipo, int hora){
+        double pago;
+        switch (tipo){
+            case "carro":
+                pago = 3000;
+                if (hora >= 20){
+                    pago += pago*0.2;
+                    System.out.println("Total a pagar $"+pago);
+                }
+                else {
+                    System.out.println("Total a pagar $"+pago);
+                }
+                 break;
+            case "moto":
+                pago = 2000;
+                if (hora >= 20){
+                    pago += pago*0.2;
+                    System.out.println("Total a pagar $"+pago);
+                }
+                else {
+                    System.out.println("Total a pagar $"+pago);
+                }
+                break;
+            case "bicicleta":
+                pago = 500;
+                if (hora >= 20){
+                    pago += pago*0.2;
+                    System.out.println("Total a pagar $"+pago);
+                }
+                else {
+                    System.out.println("Total a pagar $"+pago);
+                }
+                break;
+        }//Cierre switch
+    }//Cierre metodo AccesoParqueadero
 
     public static void PromocionesRopa(){}//Cierre metodo PromocionesRopa
 }
