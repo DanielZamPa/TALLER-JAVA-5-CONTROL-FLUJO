@@ -1,13 +1,16 @@
 package Clase3;
+
 import java.util.Scanner;
 import java.util.Random;
+
 public class Taller5 {
     private static final Scanner scanner = new Scanner(System.in);//Llamado objeto para todos los metodos
     private static final Random generadorAleatorio = new Random();//Llamado objeto para todos los metodos
 
-    public static void FacturacionMercado(){}//Cierre metodo FacturacionMercado
+    public static void FacturacionMercado() {
+    }//Cierre metodo FacturacionMercado
 
-    public static void ClasificacionMascotas(String animal){
+    public static void ClasificacionMascotas(String animal) {
         int indiceEspecialista;
         int edad;
         switch (animal.toLowerCase()) {
@@ -18,7 +21,9 @@ public class Taller5 {
                 System.out.print("Ingresa la edad: ");
                 edad = scanner.nextInt();
                 scanner.nextLine();//Limpieza de buffer
-                if (edad >= 5) {System.out.println("Se recomienda vacunación adicional.");}
+                if (edad >= 5) {
+                    System.out.println("Se recomienda vacunación adicional.");
+                }
                 break;
             case "gato":
                 String[] especialistaFelinos = {"Maria", "Juan", "Pedro"};
@@ -27,7 +32,9 @@ public class Taller5 {
                 System.out.print("Ingresa la edad: ");
                 edad = scanner.nextInt();
                 scanner.nextLine();//Limpieza de buffer
-                if (edad >= 5) {System.out.println("Se recomienda vacunación adicional.");}
+                if (edad >= 5) {
+                    System.out.println("Se recomienda vacunación adicional.");
+                }
                 break;
             case "ave":
                 String[] especialistaAves = {"Luis", "Carlos", "Maria"};
@@ -45,41 +52,78 @@ public class Taller5 {
     }//Cierre metodo ClasificacionMascotas
 
 
-    public static void AccesoParqueadero(String tipo, int hora){
+    public static void AccesoParqueadero(String tipo, int hora) {
         double pago;
-        switch (tipo){
+        switch (tipo.toLowerCase()) {
             case "carro":
                 pago = 3000;
-                if (hora >= 20){
-                    pago += pago*0.2;
-                    System.out.println("Total a pagar $"+pago);
+                if (hora >= 20) {
+                    pago += pago * 0.2;
+                    System.out.println("Total a pagar $" + pago);
+                } else {
+                    System.out.println("Total a pagar $" + pago);
                 }
-                else {
-                    System.out.println("Total a pagar $"+pago);
-                }
-                 break;
+                break;
             case "moto":
                 pago = 2000;
-                if (hora >= 20){
-                    pago += pago*0.2;
-                    System.out.println("Total a pagar $"+pago);
-                }
-                else {
-                    System.out.println("Total a pagar $"+pago);
+                if (hora >= 20) {
+                    pago += pago * 0.2;
+                    System.out.println("Total a pagar $" + pago);
+                } else {
+                    System.out.println("Total a pagar $" + pago);
                 }
                 break;
             case "bicicleta":
                 pago = 500;
-                if (hora >= 20){
-                    pago += pago*0.2;
-                    System.out.println("Total a pagar $"+pago);
-                }
-                else {
-                    System.out.println("Total a pagar $"+pago);
+                if (hora >= 20) {
+                    pago += pago * 0.2;
+                    System.out.println("Total a pagar $" + pago);
+                } else {
+                    System.out.println("Total a pagar $" + pago);
                 }
                 break;
         }//Cierre switch
     }//Cierre metodo AccesoParqueadero
 
-    public static void PromocionesRopa(){}//Cierre metodo PromocionesRopa
+    public static void PromocionesRopa(String tipo, int cantidad) {
+        double precio;
+        double descuento = 0.15;
+        double total = 0;
+        switch (tipo.toLowerCase()) {
+            case "camisa":
+                precio = 50000;
+                if (cantidad > 5) {
+                    total = (precio * cantidad);
+                    total -= total * descuento;
+                    System.out.println("Total a pagar con descuento $" + total);
+                } else {
+                    total = (precio * cantidad);
+                    System.out.println("Total a pagar descuento $" + total);
+                }
+                break;
+            case "pantalon":
+                precio = 75000;
+                if (cantidad > 5) {
+                    total = (precio * cantidad);
+                    total -= total-(total * descuento);
+                    System.out.println("Total a pagar con descuento $" + total);
+                } else {
+                    total = (precio * cantidad);
+                    System.out.println("Total a pagar descuento $" + total);
+                }
+                break;
+            case "chaqueta":
+                precio = 150000;
+                if (cantidad > 5) {
+                    total = (precio * cantidad);
+                    total -= total-(total * descuento);
+                    System.out.println("Total a pagar con descuento $" + total);
+                } else {
+                    total = (precio * cantidad);
+                    System.out.println("Total a pagar descuento $" + total);
+                }
+                break;
+            default:
+        }//Cierre switch
+    }//Cierre metodo PromocionesRopa
 }
